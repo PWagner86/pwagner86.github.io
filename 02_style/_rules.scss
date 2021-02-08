@@ -1,0 +1,85 @@
+@import 'variables';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1, h2, h3{
+    text-transform: uppercase;
+    color: rgb(231, 209, 209);
+    text-shadow: 10px 10px 10px black;
+}
+
+h2{
+    font-size: 7vmin;
+}
+
+h3{
+    font-size: 2vmax;
+    font-style: italic;
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: rgb(231, 209, 209);
+}
+
+ul{
+    list-style: none;
+}
+
+li{
+    color: rgb(231, 209, 209);
+}
+
+section{
+    margin-top: 5rem;
+}
+
+
+.titel{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 3rem;
+}
+
+.info{
+    display: flex;
+    justify-content: space-around;
+
+    .left,
+    .right{
+        position: relative;
+        min-height: 20vmin;
+        box-shadow: 10px 10px 15px black;
+        background: rgba(37, 36, 36, 0.671);
+
+        ul{
+            margin: 2vmax;
+            display: flex;
+            flex-direction: column;
+
+            li{
+                font-size: 2vmin;
+            }
+        }
+    }
+
+    .left{
+        margin: 2vmin 0 0 2vmax;
+        width: 25%;
+    }
+
+    .right{
+        margin: 2vmin 2vmax 0 0;
+        width: 65%;
+    }
+}
+
+

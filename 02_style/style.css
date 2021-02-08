@@ -1,0 +1,422 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+h1, h2, h3 {
+  text-transform: uppercase;
+  color: #e7d1d1;
+  text-shadow: 10px 10px 10px black;
+}
+
+h2 {
+  font-size: 7vmin;
+}
+
+h3 {
+  font-size: 2vmax;
+  font-style: italic;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #e7d1d1;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  color: #e7d1d1;
+}
+
+section {
+  margin-top: 5rem;
+}
+
+.titel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 3rem;
+}
+
+.info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.info .left,
+.info .right {
+  position: relative;
+  min-height: 20vmin;
+  -webkit-box-shadow: 10px 10px 15px black;
+          box-shadow: 10px 10px 15px black;
+  background: rgba(37, 36, 36, 0.671);
+}
+
+.info .left ul,
+.info .right ul {
+  margin: 2vmax;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.info .left ul li,
+.info .right ul li {
+  font-size: 2vmin;
+}
+
+.info .left {
+  margin: 2vmin 0 0 2vmax;
+  width: 25%;
+}
+
+.info .right {
+  margin: 2vmin 2vmax 0 0;
+  width: 65%;
+}
+
+body {
+  width: 100vw;
+  min-height: 100vh;
+  font-family: "Montserrat", sans-serif;
+  background: url(../03_pics/background.jpeg);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow-x: hidden;
+}
+
+body header {
+  margin-bottom: 15rem;
+}
+
+body header .main-titel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body header .main-titel h1 {
+  font-size: 10vmin;
+  padding: 3rem;
+}
+
+body header .navigation {
+  height: 5vh;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+body header .navigation .nav-btn {
+  position: absolute;
+  right: 3%;
+  width: 30px;
+  height: 30px;
+  z-index: 100;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  cursor: pointer;
+  -webkit-transition: all ease-in-out 0.5s;
+  transition: all ease-in-out 0.5s;
+}
+
+body header .navigation .nav-btn .line {
+  width: 30px;
+  height: 5px;
+  background: white;
+  border-radius: 5px;
+  -webkit-box-shadow: 3px 3px 5px black;
+          box-shadow: 3px 3px 5px black;
+  -webkit-transition: all ease-in-out 0.5s;
+  transition: all ease-in-out 0.5s;
+}
+
+body header .navigation .nav-btn .line::before,
+body header .navigation .nav-btn .line::after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 5px;
+  background: white;
+  border-radius: 5px;
+  -webkit-box-shadow: 3px 3px 5px black;
+          box-shadow: 3px 3px 5px black;
+  -webkit-transition: all ease-in-out 0.5s;
+  transition: all ease-in-out 0.5s;
+}
+
+body header .navigation .nav-btn .line::before {
+  -webkit-transform: translateY(-15px);
+          transform: translateY(-15px);
+}
+
+body header .navigation .nav-btn .line::after {
+  -webkit-transform: translateY(15px);
+          transform: translateY(15px);
+}
+
+body header .navigation .nav-btn .open {
+  -webkit-transform: translateX(-30px);
+          transform: translateX(-30px);
+  background: transparent;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+body header .navigation .nav-btn .open::before {
+  -webkit-transform: rotate(45deg) translate(5px, -5px);
+          transform: rotate(45deg) translate(5px, -5px);
+  background: #EA4335;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+body header .navigation .nav-btn .open::after {
+  -webkit-transform: rotate(-45deg) translate(5px, 5px);
+          transform: rotate(-45deg) translate(5px, 5px);
+  background: #EA4335;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+body header .navigation .to-middle {
+  right: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+body header .navigation nav {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  pointer-events: none;
+}
+
+body header .navigation nav ul {
+  position: absolute;
+  width: 45%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: ease-in-out 0.5s;
+  transition: ease-in-out 0.5s;
+}
+
+body header .navigation nav ul li {
+  padding: 1rem;
+  font-size: 3vmin;
+  text-align: center;
+}
+
+body header .navigation nav ul li a {
+  color: white;
+}
+
+body header .navigation nav .nav-bar-left {
+  left: -45%;
+  opacity: 0;
+  pointer-events: none;
+}
+
+body header .navigation nav .from-left {
+  left: 0;
+  opacity: 1;
+  pointer-events: all;
+}
+
+body header .navigation nav .nav-bar-right {
+  right: -45%;
+  opacity: 0;
+  pointer-events: none;
+}
+
+body header .navigation nav .from-right {
+  right: 0;
+  opacity: 1;
+  pointer-events: all;
+}
+
+body .back-wrapper {
+  position: fixed;
+  right: 10%;
+  bottom: 10%;
+  width: 6vmin;
+  height: 6vmin;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: none;
+  background: #EA4335;
+  -webkit-box-shadow: 5px 5px 10px black;
+          box-shadow: 5px 5px 10px black;
+  font-size: 5vmin;
+  color: white;
+  border-radius: 50%;
+  cursor: pointer;
+  -webkit-animation: movetop 1.5s infinite ease-in-out;
+          animation: movetop 1.5s infinite ease-in-out;
+}
+
+@-webkit-keyframes movetop {
+  50% {
+    bottom: 11%;
+  }
+  100% {
+    bottom: 10%;
+  }
+}
+
+@keyframes movetop {
+  50% {
+    bottom: 11%;
+  }
+  100% {
+    bottom: 10%;
+  }
+}
+
+body #about .about-info .about-right .pic-container {
+  position: absolute;
+  height: 20vmin;
+  width: 20vmin;
+  top: 5%;
+  right: 5%;
+  background: url(../03_pics/ich.jpg);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  -webkit-box-shadow: 5px 10px 10px black;
+          box-shadow: 5px 10px 10px black;
+  margin-left: 3rem;
+}
+
+body #diploma {
+  padding-bottom: 5rem;
+}
+
+body #diploma .diploma-left ul li {
+  cursor: pointer;
+}
+
+body #diploma .diploma-right .diploma-titel {
+  height: 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body #diploma .diploma-right .diploma-titel i {
+  position: absolute;
+  left: 10%;
+  font-size: 5vmin;
+  color: white;
+  -webkit-animation: showleft 1.5s infinite ease-in-out;
+          animation: showleft 1.5s infinite ease-in-out;
+}
+
+@-webkit-keyframes showleft {
+  50% {
+    left: 11%;
+  }
+  100% {
+    left: 10%;
+  }
+}
+
+@keyframes showleft {
+  50% {
+    left: 11%;
+  }
+  100% {
+    left: 10%;
+  }
+}
+
+body #diploma .diploma-right .screen {
+  height: 90%;
+  width: 100%;
+}
+
+@media screen and (max-width: 1200px) {
+  body #diploma .diploma-right i {
+    top: 7%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  body header {
+    margin-bottom: 10rem;
+  }
+  body header .navigation .to-middle {
+    right: 40%;
+  }
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,279 @@
+@import 'variables';
+@import 'rules';
+
+
+body{
+    width: 100vw;
+    min-height: 100vh;
+    font-family: $mainFont;
+    background: url(../03_pics/background.jpeg);
+    @include backPic;
+    overflow-x: hidden;
+
+    header{
+        margin-bottom: 15rem;
+
+        .main-titel{
+            @include flexCenter;
+
+            h1{
+                font-size: 10vmin;
+                padding: 3rem;
+            }
+        }
+
+        .navigation{
+            height: 5vh;
+            position: relative;
+            @include fullSize;
+
+            .nav-btn{
+                position: absolute;
+                right: 3%;
+                width: 30px;
+                height: 30px;
+                z-index: 100;
+                top: 50%;
+                transform: $trans;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                align-items: flex-end;
+                cursor: pointer;
+                transition: all ease-in-out 0.5s;
+
+                .line{
+                    width: 30px;
+                    height: 5px;
+                    background: white;
+                    border-radius: 5px;
+                    box-shadow: 3px 3px 5px black;
+                    transition: all ease-in-out 0.5s;
+                }
+
+                .line::before,
+                .line::after{
+                    content: '';
+                    position: absolute;
+                    width: 30px;
+                    height: 5px;
+                    background: white;
+                    border-radius: 5px;
+                    box-shadow: 3px 3px 5px black;
+                    transition: all ease-in-out 0.5s;
+                }
+
+                .line::before{
+                    transform: translateY(-15px);
+                }
+
+                .line::after{
+                    transform: translateY(15px);
+                }
+
+                .open{
+                    transform: translateX(-30px);
+                    background: transparent;
+                    box-shadow: none;
+                }
+
+                .open::before{
+                    transform: rotate(45deg) translate(5px, -5px);
+                    background: $red;
+                    box-shadow: none;
+                }
+
+                .open::after{
+                    transform: rotate(-45deg) translate(5px, 5px);
+                    background: $red;
+                    box-shadow: none;
+
+                }
+            }
+
+            .to-middle{
+                right: 50%;
+                transform: $trans;
+            }
+
+            nav{
+                position: absolute;
+                @include fullSize;
+                display: flex;
+                pointer-events: none;
+
+                ul{
+                    position: absolute;
+                    width: 45%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    transition: ease-in-out 0.5s;
+
+                    li{
+                        padding: 1rem;
+                        font-size: 3vmin;
+                        text-align: center;
+
+                        a{
+                            color: white;
+                        }
+                    }
+                }
+
+                .nav-bar-left{
+                    left: -45%;
+                    opacity: 0;
+                    pointer-events: none;
+                }
+
+                .from-left{
+                    left: 0;
+                    opacity: 1;
+                    pointer-events: all;
+                }
+
+                .nav-bar-right{
+                    right: -45%;
+                    opacity: 0;
+                    pointer-events: none;
+                }
+
+                .from-right{
+                    right: 0;
+                    opacity: 1;
+                    pointer-events: all;
+                }
+            }
+        }
+    }
+
+    .back-wrapper{
+        position: fixed;
+        right: 10%;
+        bottom: 10%;
+        width: 6vmin;
+        height: 6vmin;
+        @include flexCenter;
+        display: none;
+        background: $red;
+        box-shadow: 5px 5px 10px black;
+        font-size: 5vmin;
+        color: white;
+        border-radius: 50%;
+        cursor: pointer;
+        animation: movetop 1.5s infinite ease-in-out;
+    }
+
+    @keyframes movetop{
+        50%{
+            bottom: 11%;
+        }
+
+        100%{
+            bottom: 10%;
+        }
+    }
+
+
+    #about{
+
+        .about-info{
+
+            .about-right{
+
+                .pic-container{
+                    position: absolute;
+                    height: 20vmin;
+                    width: 20vmin;
+                    top: 5%;
+                    right: 5%;
+                    background: url(../03_pics/ich.jpg);
+                    @include backPic;
+                    border-radius: 50%;
+                    box-shadow: 5px 10px 10px black;
+                    margin-left: 3rem;
+                }
+            }
+        }
+    }
+
+    #diploma{
+        padding-bottom: 5rem;
+
+        .diploma-left{
+            
+            ul{
+
+                li{
+                    cursor: pointer;
+                }
+            }
+        }
+        .diploma-right{
+
+            .diploma-titel{
+                height: 10%;
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+
+                i{
+                    position: absolute;
+                    left: 10%;
+                    font-size: 5vmin;
+                    color: white;
+                    animation: showleft 1.5s infinite ease-in-out;
+                }
+
+                @keyframes showleft {
+                    50%{
+                        left: 11%;
+                    }
+
+                    100%{
+                        left: 10%;
+                    }
+                }
+            }
+            
+            .screen{
+                height: 90%;
+                width: 100%;
+            }
+        }    
+    }
+}
+
+@media screen and (max-width: 1200px){
+    body{
+
+        #diploma{
+
+            .diploma-right{
+
+                i{
+                    top: 7%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 576px){
+    
+    body{
+        
+        header{
+            margin-bottom: 10rem;
+
+            .navigation{
+
+                .to-middle{
+                    right: 40%;
+                }
+            }
+        }
+    }
+}
